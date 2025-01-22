@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Masonry from 'react-masonry-css';
-import { X, Maximize2, Tag, Calendar, Info } from 'lucide-react';
+import { X, Tag } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 interface PortfolioItem {
@@ -89,7 +89,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ title, subtitle, it
             >
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="relative group cursor-pointer overflow-hidden rounded-lg"
+                className="relative group cursor-pointer overflow-hidden"
                 onClick={() => setSelectedItem(item)}
               >
                 <img

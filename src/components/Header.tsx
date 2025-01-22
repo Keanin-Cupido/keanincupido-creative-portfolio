@@ -47,8 +47,8 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-dark-200/95 backdrop-blur-sm">
-      <div className="h-1 bg-gray-800">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-zinc-900/10 to-red-800/15 bg-zinc-900/15">
+      <div className="h-1 bg-zinc-800/25">
         <motion.div
           className="h-full bg-primary"
           style={{ width: `${scrollProgress}%` }}
@@ -58,14 +58,14 @@ const Header = () => {
         />
       </div>
       
-      <nav className="container mx-auto px-4 py-8">
+      <nav className="container mx-auto px-4 py-5">
         <div className="flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-4xl font-wosker font-normal text-white"
+            className="text-6xl font-custom font-black tracking-tight text-red-500"
           >
-            KC.
+            KC...
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -74,9 +74,9 @@ const Header = () => {
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
-                className={`font-poppins text-base ${
+                className={`font-wosker font-light uppercase tracking-wide text-2xl ${
                   activeSection === id
-                    ? 'text-primary font-bold'
+                    ? 'text-primary'
                     : 'text-gray-300 hover:text-white'
                 } transition-colors duration-300`}
               >

@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import PortfolioSection from './components/PortfolioSection';
@@ -12,7 +11,7 @@ import '@fontsource/poppins/400.css';
 
 function App() {
   return (
-    <div className="bg-dark-100 min-h-screen">
+    <div className="min-h-screen noise bg-gradient-to-r from-zinc-900/10 to-red-800/15 bg-zinc-900">
       <Header />
       <Hero />
       <PortfolioSection

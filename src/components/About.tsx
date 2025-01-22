@@ -27,8 +27,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 bg-dark-100">
-      <div className="container mx-auto">
+    <section id="about" className="w-full py-20 px-4 bg-dark-100">
+      <div className="w-full container mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -44,14 +44,14 @@ const About = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-dark-200 p-6 rounded-lg"
+              className="bg-dark-200 w-full p-6 rounded-lg"
             >
               <div className="bg-dark-300 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                 {skill.icon}

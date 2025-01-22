@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <h3 className="text-8xl font-custom font-bold text-white mb-2 uppercase tracking-wide">KC Creative Portfolio</h3>
+            <h3 className="text-8xl font-custom font-bold text-white mb-2 uppercase tracking-wide">KC Creative <span className='text-primary'>Portfolio</span></h3>
             <p className="text-gray-300 font-poppins">Creating digital experiences that inspire - for fun</p>
           </div>
 
