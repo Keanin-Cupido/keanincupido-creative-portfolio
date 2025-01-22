@@ -13,7 +13,6 @@ const Header = () => {
     { id: '2d', label: '2D Art' },
     { id: 'graphics', label: 'Graphics' },
     { id: 'about', label: 'About' },
-    { id: 'contact', label: 'Contact' },
   ];
 
   useEffect(() => {
