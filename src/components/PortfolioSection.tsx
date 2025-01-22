@@ -41,7 +41,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ title, subtitle, it
   );
 
   return (
-    <section id={id} className="py-20 px-4 bg-dark-200">
+    <section id={id} className="py-20 px-4">
       <div className="container mx-auto">
         <motion.div
           ref={ref}
@@ -50,7 +50,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ title, subtitle, it
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-roboto font-bold text-white mb-4">{title}</h2>
+          <h2 className="text-8xl font-custom font-bold text-white mb-4 uppercase tracking-wide">{title}</h2>
           <p className="text-gray-300 font-poppins">{subtitle}</p>
         </motion.div>
 

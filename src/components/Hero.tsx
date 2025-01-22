@@ -3,21 +3,21 @@ import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="bg-dark-100 flex items-center justify-center relative py-4 md:h-[60vh] h-[75vh]">
-      <div className="container mx-auto px-4 py-20">
+    <section id="home" className="flex items-center justify-start relative py-4 min-h-screen">
+      <div className="w-full px-4 py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center"
+          className="px-4 text-left"
         >
-          <h1 className="font-roboto font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6">
-            Creative
-            <span className="text-primary"> Portfolio</span>
+          <h1 className="font-custom font-bold text-4xl text-white mb-16 mx-auto md:mx-24 tracking-wide">
+            <div className='text-[8rem] mb-28'>KEANIN</div>
+            <div className='text-[16rem]'>CUPIDO</div>
           </h1>
-          <p className="font-poppins text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-4">
+          <p className="font-poppins text-2xl md:text-4xl text-gray-300 max-w-3xl mx-auto mb-4">
             Exploring the intersection of art and technology through 3D modeling,
-            illustration, and graphic design.
+            illustration, and graphic design<span className="font-custom text-5xl text-red-500"> .</span>
           </p>
         </motion.div>
       </div>

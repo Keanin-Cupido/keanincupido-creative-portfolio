@@ -68,7 +68,18 @@ export const portfolioData = {
         medium: "blender",
         specs: [
         ]
-      }
+      },
+      {
+        id: "3d-2",
+        title: "Melissa",
+        description: "",
+        imageUrl: "/3D_art/melissa_3D.png",
+        category: "3D Art",
+        date: "2024",
+        medium: "blender",
+        specs: [
+        ]
+      },
     ]
   },
   twoDArt: {

@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Headston';
+  src: url('./fonts/Headston.woff2') format('woff2'),
+       url('./fonts/Headston.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Wosker';
+  src: url('./fonts/Wosker.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   color-scheme: dark;
 }

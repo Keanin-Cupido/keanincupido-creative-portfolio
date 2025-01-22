@@ -18,6 +18,8 @@ export default {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
+        custom: ['Headston', 'sans-serif'],
+        wosker: ['Wosker', 'sans-serif'],
       },
       transitionDuration: {
         '300': '300ms',

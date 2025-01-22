@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -58,14 +58,14 @@ const Header = () => {
         />
       </div>
       
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 py-8">
         <div className="flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-roboto font-bold text-white"
+            className="text-4xl font-wosker font-normal text-white"
           >
-            Keanin Cupido Creative Portfolio.
+            KC.
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -74,7 +74,7 @@ const Header = () => {
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
-                className={`font-poppins text-sm ${
+                className={`font-poppins text-base ${
                   activeSection === id
                     ? 'text-primary font-bold'
                     : 'text-gray-300 hover:text-white'
