@@ -77,7 +77,7 @@ const Header = () => {
                 onClick={() => scrollToSection(id)}
                 className={`font-poppins text-sm ${
                   activeSection === id
-                    ? 'text-primary font-medium'
+                    ? 'text-primary font-bold'
                     : 'text-gray-300 hover:text-white'
                 } transition-colors duration-300`}
               >
