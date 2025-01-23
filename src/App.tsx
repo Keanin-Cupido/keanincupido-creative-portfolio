@@ -11,7 +11,7 @@ import '@fontsource/poppins/400.css';
 
 function App() {
   return (
-    <div className="min-h-screen noise bg-gradient-to-r from-zinc-900/10 to-red-800/15 bg-zinc-900">
+    <div className="min-h-screen bg-gradient-to-r from-zinc-900/10 to-red-800/15 bg-zinc-900">
       <Header />
       <Hero />
       <PortfolioSection
