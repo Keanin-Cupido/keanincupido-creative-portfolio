@@ -27,40 +27,22 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="w-full py-20 px-4 bg-dark-100">
+    <section id="about" className="w-full py-20 px-4">
       <div className="w-full container mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center mb-16"
+          className="mx-auto text-left mb-16"
         >
-          <h2 className="text-8xl font-custom font-bold text-white mb-6 uppercase tracking-wide">About Me</h2>
-          <p className="text-gray-300 font-poppins text-lg leading-relaxed">
+          <h2 className="text-xl md:text-3xl font-poppins font-bold text-white mb-6 uppercase tracking-wide">About Me</h2>
+          <p className="text-gray-300 font-poppins text-base leading-relaxed max-w-3xl">
             I'm a hobbyist creative with a passion for digital art and design. 
             My interests include 3D modeling, digital illustration, and exploring graphic design, always seeking to express 
             my creativity in new and exciting ways.
           </p>
         </motion.div>
-
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-dark-200 w-full p-6 rounded-lg"
-            >
-              <div className="bg-dark-300 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                {skill.icon}
-              </div>
-              <h3 className="text-xl font-roboto font-bold text-white mb-3">{skill.title}</h3>
-              <p className="text-gray-300 font-poppins">{skill.description}</p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

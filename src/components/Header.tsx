@@ -5,23 +5,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   const sections = [
-    { id: 'home', label: 'Home' },
-    { id: '3d', label: '3D Art' },
-    { id: '2d', label: '2D Art' },
-    { id: 'graphics', label: 'Graphics' },
-    { id: 'about', label: 'About' },
+    { id: '3d', label: '3D.' },
+    { id: '2d', label: '2D.' },
+    { id: 'graphics', label: 'Graphic Design.' },
+    { id: 'about', label: 'About.' },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const winScroll = document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      setScrollProgress(scrolled);
-
       // Update active section based on scroll position
       sections.forEach(({ id }) => {
         const element = document.getElementById(id);
@@ -47,81 +40,30 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-zinc-900/10 to-red-800/15 bg-zinc-900/15">
-      <div className="h-1 bg-zinc-800/25">
-        <motion.div
-          className="h-full bg-primary"
-          style={{ width: `${scrollProgress}%` }}
-          initial={{ width: '0%' }}
-          animate={{ width: `${scrollProgress}%` }}
-          transition={{ duration: 0.1 }}
-        />
-      </div>
+    <header className="pt-4 left-0 right-0 z-50">
       
-      <nav className="container mx-auto px-4 py-5">
-        <div className="flex items-center justify-between">
+      <nav className="w-full container mx-auto px-4 py-5">
+        <div className="flex items-center justify-center md:justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-6xl font-custom font-black tracking-tight text-red-500"
           >
-            KC...
+            <img src="/logo.png" alt="Logo" className="h-16 md:h-20" />
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6">
             {sections.map(({ id, label }) => (
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
-                className={`font-wosker font-light uppercase tracking-wide text-2xl ${
-                  activeSection === id
-                    ? 'text-primary'
-                    : 'text-gray-300 hover:text-white'
-                } transition-colors duration-300`}
+                className={'font-poppins font-light uppercase tracking-wide text-base md:text-lg text-gray-300/80 hover:text-white transition-colors duration-300'}
               >
                 {label}
               </button>
             ))}
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
-
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden"
-            >
-              <div className="flex flex-col space-y-4 py-4">
-                {sections.map(({ id, label }) => (
-                  <button
-                    key={id}
-                    onClick={() => scrollToSection(id)}
-                    className={`font-poppins text-sm ${
-                      activeSection === id
-                        ? 'text-primary font-medium'
-                        : 'text-gray-300 hover:text-white'
-                    } transition-colors duration-300`}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </nav>
     </header>
   );

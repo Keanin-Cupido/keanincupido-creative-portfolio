@@ -9,12 +9,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-dark-300 py-12 px-4">
+    <footer className="py-12 px-4">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <h3 className="text-8xl font-custom font-bold text-white mb-2 uppercase tracking-wide">KC Creative <span className='text-primary'>Portfolio</span></h3>
-            <p className="text-gray-300 font-poppins">Creating digital experiences that inspire - for fun</p>
+            <img src="/logo.png" alt="Keanin Cupido Creative Portfolio Logo" className="h-16 md:h-24" />
           </div>
 
           <div className="flex items-center gap-4">
@@ -36,7 +35,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-dark-100 mt-8 pt-8 text-center">
-          <p className="text-gray-400 font-poppins text-sm">
+          <p className="text-gray-400 font-poppins text-xs">
             © {currentYear} Keanin Cupido Creative Portfolio. All rights reserved.
           </p>
         </div>

@@ -29,9 +29,9 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ title, subtitle, it
   });
 
   const breakpointCols = {
-    default: 3,
-    1100: 2,
-    700: 1,
+    default: 4,
+    1100: 3,
+    700: 2,
   };
 
   const uniqueCategories = ['all', ...new Set(items.map(item => item.medium))];
@@ -41,30 +41,30 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ title, subtitle, it
   );
 
   return (
-    <section id={id} className="py-20 px-4">
+    <section id={id} className="w-full py-20 px-4">
       <div className="container mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-left mb-8"
         >
-          <h2 className="text-8xl font-custom font-bold text-white mb-4 uppercase tracking-wide">{title}</h2>
+          <h2 className="text-xl md:text-3xl font-poppins font-bold text-white mb-2 uppercase tracking-wide">{title}</h2>
           <p className="text-gray-300 font-poppins">{subtitle}</p>
         </motion.div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-start gap-2 mb-8">
           {uniqueCategories.map(category => (
             <motion.button
               key={category}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setFilter(category)}
-              className={`px-6 py-2 rounded-full font-poppins text-sm transition-colors duration-300
+              className={`px-5 py-[0.5em] font-poppins text-sm transition-colors duration-300
                 ${filter === category 
-                  ? 'bg-primary text-white' 
+                  ? 'bg-primary/80 text-white' 
                   : 'bg-dark-300 text-gray-300 hover:bg-accent3'}`}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -124,7 +124,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ title, subtitle, it
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
-                className="bg-dark-200 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                className="bg-dark-200 rounded-lg max-w-xl w-full max-h-[90vh] overflow-y-auto"
                 onClick={e => e.stopPropagation()}
               >
                 <div className="relative">
@@ -139,18 +139,6 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ title, subtitle, it
                   >
                     <X className="w-6 h-6 text-white" />
                   </button>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-2xl font-roboto font-bold text-white mb-4">{selectedItem.title}</h3>
-                  <p className="text-gray-300 font-poppins mb-6">{selectedItem.description}</p>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div className="flex items-center gap-2">
-                      <Tag className="w-5 h-5 text-primary" />
-                      <span className="text-gray-300">{selectedItem.medium}</span>
-                    </div>
-                  </div>
                 </div>
               </motion.div>
             </motion.div>

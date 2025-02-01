@@ -33,7 +33,7 @@ html {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -41,7 +41,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary rounded-full;
+  @apply bg-zinc-100 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
