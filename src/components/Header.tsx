@@ -57,7 +57,7 @@ const Header = () => {
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
-                className={'font-poppins font-light uppercase tracking-wide text-base md:text-lg text-gray-300/80 hover:text-white transition-colors duration-300'}
+                className={'font-poppins font-light uppercase tracking-wide text-base md:text-lg text-gray-300/80 hover:text-white hover:underline underline-offset-2 transition-colors duration-300'}
               >
                 {label}
               </button>

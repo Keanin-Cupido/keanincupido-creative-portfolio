@@ -43,40 +43,43 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ title, subtitle, it
   return (
     <section id={id} className="w-full py-20 px-4">
       <div className="container mx-auto">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-left mb-8"
-        >
-          <h2 className="text-xl md:text-3xl font-poppins font-bold text-white mb-2 uppercase tracking-wide">{title}</h2>
-          <p className="text-gray-300 font-poppins">{subtitle}</p>
-        </motion.div>
+        <div className="flex align-bottom justify-between w-full mb-6">
+          {/* Content goes here */}
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-left"
+          >
+            <h2 className="text-xl md:text-3xl font-poppins font-bold text-white mb-2 uppercase tracking-wide">{title}</h2>
+            <p className="text-gray-300 font-poppins">{subtitle}</p>
+          </motion.div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-start gap-2 mb-8">
-          {uniqueCategories.map(category => (
-            <motion.button
-              key={category}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setFilter(category)}
-              className={`px-5 py-[0.5em] font-poppins text-sm transition-colors duration-300
-                ${filter === category 
-                  ? 'bg-primary/80 text-white' 
-                  : 'bg-dark-300 text-gray-300 hover:bg-accent3'}`}
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </motion.button>
-          ))}
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap justify-start gap-2 mb-8">
+            {uniqueCategories.map(category => (
+              <motion.button
+                key={category}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setFilter(category)}
+                className={`px-5 py-[0.5em] bg-transparent font-poppins text-base md:text-lg transition-colors duration-300
+                  ${filter === category 
+                    ? 'text-white underline underline-offset-2' 
+                    : 'text-gray-300 hover:text-white'}`}
+              >
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </motion.button>
+            ))}
+          </div>
         </div>
 
         {/* Masonry Grid */}
         <Masonry
           breakpointCols={breakpointCols}
           className="flex -ml-4 w-auto"
-          columnClassName="pl-4"
+          columnClassName="pl-2"
         >
           {filteredItems.map(item => (
             <motion.div
@@ -85,7 +88,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ title, subtitle, it
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="mb-4"
+              className="mb-2"
             >
               <motion.div
                 whileHover={{ scale: 1.02 }}

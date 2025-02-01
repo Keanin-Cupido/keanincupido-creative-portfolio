@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <img src="/logo.png" alt="Keanin Cupido Creative Portfolio Logo" className="h-16 md:h-24" />
+            <img src="/logo-sm.png" alt="Keanin Cupido Creative Portfolio Logo" className="h-16 md:h-20" />
           </div>
 
           <div className="flex items-center gap-4">
